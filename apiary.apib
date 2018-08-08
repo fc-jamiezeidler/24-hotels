@@ -1,0 +1,107 @@
+FORMAT: 1A
+HOST: https://www.flightcentre.com.au/accommodation/api/v1/search
+
+# FCAU Hotels
+
+Intro...
+
+## Availability [/available-hotels?seoUrl={seoUrl}&checkInDate={checkInDate}&checkOutDate={checkOutDate}&adultCount={adultCount}&childCount={childCount}{childAges}]
+
++ Parameters
+    + seoUrl (required, string, `accommodation/australia/queensland/brisbane`) ... Seo URL of a destination
+    + checkInDate (required, string, `2018-12-03`) ... Check-in date
+    + checkOutDate (required, string, `2018-12-04`) ... Check-out date
+    + adultCount (required, integer, `2`) ... Adult Count
+    + childCount (optional, string, `0`) ... Child Count
+    + childAges (optional, string, `0`) ... Child Ages
+    
+    
+### Get availability for a destination [GET]
+
++ Response 200 (application/json)
+
+        [
+          {
+            "address": {
+              "addressLines": [
+                "string"
+              ],
+              "city": "string",
+              "country": "string",
+              "district": "string",
+              "state": "string",
+              "zip": "string"
+            },
+            "amenities": [
+              "string"
+            ],
+            "description": "string",
+            "filters": [
+              "string"
+            ],
+            "geoLocation": {
+              "lat": "string",
+              "lon": "string"
+            },
+            "hotelDetailIdentifier": "string",
+            "hotelId": "string",
+            "images": [
+              {
+                "caption": "string",
+                "name": "string",
+                "thumbnailUrl": "string",
+                "url": "string"
+              }
+            ],
+            "leadRoom": {
+              "cancellationPolicies": [
+                {
+                  "deadLineTimestamp": "string",
+                  "description": "string",
+                  "flatFee": 0
+                }
+              ],
+              "connectorName": "string",
+              "description": "string",
+              "feesAtHotel": [
+                {
+                  "description": "string",
+                  "fee": 0
+                }
+              ],
+              "freeCancellationDate": "string",
+              "name": "string",
+              "nonRefundable": true,
+              "originalPrice": {
+                "netPrice": 0,
+                "tax": 0,
+                "total": 0
+              },
+              "price": {
+                "netPrice": 0,
+                "tax": 0,
+                "total": 0
+              },
+              "promotions": [
+                {
+                  "description": "string",
+                  "isPrimary": true
+                }
+              ],
+              "roomDetailIdentifier": "string",
+              "shortName": "string",
+              "specialRequestSupported": true,
+              "supplierPolicy": "string"
+            },
+            "name": "string",
+            "nights": 0,
+            "rating": 0,
+            "shortDescription": "string",
+            "thumbnail": "string",
+            "tripAdvisor": {
+              "medianUserRating": 0,
+              "ratingImageUrl": "string",
+              "userReviewCount": 0
+            }
+          }
+        ]
